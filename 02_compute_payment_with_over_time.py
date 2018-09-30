@@ -12,9 +12,10 @@ Pay: 475.00
 # take hours and rate as input
 hours = int(input('Enter Hours: '))
 rate = float(input('Enter Rate:'))
-pay = 0
 
-# your code here
-
+if hours > 40:
+    pay = (40*rate)+((hours-40)*(rate*1.5))
+else:
+    pay = hours*rate
 
 print('Pay: {:.2f}'.format(pay))

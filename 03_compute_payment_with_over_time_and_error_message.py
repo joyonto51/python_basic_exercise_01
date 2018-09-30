@@ -3,6 +3,7 @@ Write a program that will take hours and rate per hour as input and will compute
 
 Here your program will show an error message for non-numeric value of hours/rate. After showing the error message, the program will exit
 
+if hours > 40:
 Example 01:
 Enter Hours: 45
 Enter Rate: 10
@@ -15,15 +16,19 @@ Enter Rate: nine
 Error, please enter numeric input
 
 """
+try:
+    hours = int(input('Enter Hours: '))
+    rate = float(input('Enter Rate:'))
+
+    if hours > 40:
+        pay = (40*rate)+((hours-40)*(rate*1.5))
+    else:
+        pay = hours*rate
+
+    print('Pay: {:.2f}'.format(pay))
+
+except:
+    print("Error, plaese enter numeric input")
 
 
-# your code here
 
-
-# take hours and rate as input
-hours = int(input('Enter Hours: '))
-rate = float(input('Enter Rate:'))
-pay = 0
-
-
-print('Pay: {:.2f}'.format(pay))

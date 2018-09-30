@@ -18,16 +18,19 @@ Error, please enter numeric input
 
 
 def computepay(hours, rate):
-    pay = 0
-    # your code here
+    if hours > 40:
+        pay = (40*rate)+((hours-40)*(rate*1.5))
+    else:
+        pay = hours*rate
 
     return pay
 
+try:
+    hours = int(input('Enter Hours: '))
+    rate = float(input('Enter Rate:'))
+    pay = computepay(hours, rate)
 
-# take hours and rate as input
-hours = int(input('Enter Hours: '))
-rate = float(input('Enter Rate:'))
-pay = computepay(hours, rate)
-
-if pay:
-    print('Pay: {:.2f}'.format())
+    if pay:
+        print('Pay: {:.2f}'.format(pay))
+except:
+    print("Error, please enter numeric input")
